@@ -348,13 +348,6 @@ always @(posedge clk_spi) begin
 
 					// CMD12: STOP_TRANSMISSION 
 					'h4c: reply <= 0;    // ok
-					
-					// CMD13: SEND_STATUS 
-					'h4d: begin
-					        reply <= 'h00;    // ok 
-							  reply0 <='h00;
-							  reply_len <= 1;
-					      end
 
 					// CMD16: SET_BLOCKLEN
 					'h50: begin
@@ -368,8 +361,6 @@ always @(posedge clk_spi) begin
 
 					// CMD18: READ_MULTIPLE
 					'h52: reply <= 0;    // ok
-					// ACMD23:  SET_WR_BLK_ERASE_COUNT
-					'h57: reply <= 0;     //ok
 
 					// CMD24: WRITE_BLOCK
 					'h58,
